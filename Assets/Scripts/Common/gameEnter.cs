@@ -29,9 +29,6 @@ public class gameEnter : MonoBehaviour
         //ApplicationSetting.Init();//系统初始化
         NetInit();//初始化网络模式
         PoolMgr.instance.Init();//初始化对象池
-
-        if (isHasMedio)
-            MediaPlayerMgr.instance.Init();//视频初始化
         UIMgr.instance.Init();//UI初始化
         
     }

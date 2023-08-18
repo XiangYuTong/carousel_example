@@ -52,8 +52,8 @@ public class VideoItem : MonoBehaviour
                 break;
             case MediaPlayerEvent.EventType.FinishedPlaying:
                 print("finishedEvent结束事件触发");
-                //player.OpenMedia(MediaPathType.RelativeToStreamingAssetsFolder, Common.videoFileName[index], false);
                 UIMgr.instance.GetPanel<MainPanel>().ChangeVideo();
+                //player.OpenMedia(MediaPathType.RelativeToStreamingAssetsFolder, Common.videoFileName[index], false);
                 break;
         }
 

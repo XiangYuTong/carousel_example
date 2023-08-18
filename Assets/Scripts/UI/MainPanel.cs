@@ -47,18 +47,19 @@ public class MainPanel : UIpanel
         {
             if (items[i].index != currentIndex)
             {
-                items[i].rectTransform.SetAsLastSibling();  
+                items[i].rectTransform.SetAsLastSibling();
                 items[i].rectTransform.DOAnchorPosX(0, 1).OnComplete(() =>
                 {
                     currentIndex = (currentIndex + 1) % Common.videoFileName.Length;
-                    OnLevelWasLoaded();
                     int tempindex = (currentIndex + 1) % 2;
+                    OnLevelWasLoaded();
                     items[tempindex].rectTransform.DOAnchorPosX(Screen.width, 1).OnComplete(() => {
-                        items[tempindex].index = (items[tempindex].index + 2) % Common.videoFileName.Length;
-                        items[tempindex].player.OpenMedia(MediaPathType.RelativeToStreamingAssetsFolder, Common.videoFileName[currentIndex], false); ;
                         Common.isPlaying = false;
                     });
-               
+                    items[tempindex].index = (items[tempindex].index + 2) % Common.videoFileName.Length;
+                    Debug.Log("ªª ”∆µ");
+                    items[tempindex].player.OpenMedia(MediaPathType.RelativeToStreamingAssetsFolder, Common.videoFileName[items[tempindex].index], false);
+
                 });
             }
 
